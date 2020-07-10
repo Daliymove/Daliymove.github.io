@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 技术 | CodeJenny</title>
+  <title>多线程之旅 | CodeJenny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodeJenny">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/index.html">
+  <meta name="description" content="多线程之”九阳神功”秘籍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程之旅">
+<meta property="og:url" content="http://yoursite.com/2020/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%97%85/index.html">
 <meta property="og:site_name" content="CodeJenny">
+<meta property="og:description" content="多线程之”九阳神功”秘籍">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710152151.png">
+<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710162128.png">
+<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710172644.png">
+<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710174520.png">
+<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710181001.png">
+<meta property="article:published_time" content="2020-07-10T06:29:57.000Z">
+<meta property="article:modified_time" content="2020-07-10T12:04:55.219Z">
 <meta property="article:author" content="CodeJenny">
+<meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710152151.png">
   
     <link rel="alternative" href="/atom.xml" title="CodeJenny" type="application/atom+xml">
   
@@ -164,39 +175,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-多线程之旅" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      多线程之旅
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%97%85/" class="archive-article-date">
+
+        
+        <a href="/2020/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%97%85/" class="archive-article-date">
   	<time datetime="2020-07-10T06:29:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
 </a>
 
 
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
 
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="多线程之”九阳神功”秘籍"><a href="#多线程之”九阳神功”秘籍" class="headerlink" title="多线程之”九阳神功”秘籍"></a>多线程之”九阳神功”秘籍</h1><a id="more"></a>
+
+<h2 id="什么是多线程？"><a href="#什么是多线程？" class="headerlink" title="什么是多线程？"></a>什么是多线程？</h2><p>我们先来看看，什么是线程：</p>
+<p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710152151.png" alt=""></p>
+<p><strong>问题1：不运行的程序，是什么？</strong></p>
+<blockquote>
+<p>程序可以理解成一个静态的指令集合，当系统运行程序时， 程序中的指令就被激活了，转变成进程开始执行任务。</p>
+</blockquote>
+<p><strong>问题2：进程之间会相互影响吗？</strong></p>
+<blockquote>
+<ol>
+<li>进程是系统中独立存在的实体，每一个进程都拥有自己私有的地址空间。在没有经过进程本身的允许的情况下，一个用户进程是不可以直接访问其他进程的地址空间的；</li>
+<li>多个进程可以在单个处理器上并发执行，并且多进程之间不会互相影响。</li>
+</ol>
+</blockquote>
+<p><strong>问题3：线程之间会互相影响吗？</strong></p>
+<blockquote>
+<p>线程可以理解成进程的执行单元，一个线程必须有一个父进程，当进程被初始化，主线程就创建了，它们共享着父进程的内存资源。线程可以拥有自己的堆栈，自己的程序计数器和自己的局部变量，但不拥有系统资源；他们可以通过调用父线程的资源来相互影响，但是要做到不要相互妨碍；</p>
+</blockquote>
+<blockquote>
+<p>总结起来就是一句话，一个程序的运行，至少依托着一个进程的支持，一个进程的运行，至少需要一个线程；</p>
+</blockquote>
+<p><strong>多线程的优势(相较于多进程)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 进程之间不能共享内存，线程之间能轻易实现内存的共享；</span><br><span class="line"></span><br><span class="line">2. 系统创建进程需要为该进程重新分配系统资源，而创建线程的代价相比之下就小得多，因此使用多线程来实现任务并发就比多进程的效率高；</span><br><span class="line"></span><br><span class="line">3. Java语言内置了多线程功能的支持，而不是单纯地作为底层操作系统的调度方式，从而简化了Java的多线程编程。</span><br></pre></td></tr></table></figure>
+<h2 id="线程的创建与启动"><a href="#线程的创建与启动" class="headerlink" title="线程的创建与启动"></a>线程的创建与启动</h2><blockquote>
+<p>三种方法：1. 继承Thread类创建；2. 实现Runnable接口创建；3. 使用Callable和Future创建</p>
+</blockquote>
+<h3 id="第一种继承创建"><a href="#第一种继承创建" class="headerlink" title="第一种继承创建"></a>第一种继承创建</h3><p>见如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Thread t &#x3D; new MyThread();</span><br><span class="line">        t.start();</span><br><span class="line">        for(int i &#x3D;0;i&lt;100;i++)</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot;多线程不好玩&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    static class MyThread extends Thread&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            for(int i &#x3D;0;i&lt;100;i++)</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;多线程真好玩&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果中能看到交替运行:<br><img src="http://qd343r17a.bkt.clouddn.com//img/20200710162128.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>当然，这么写有点麻烦，因为Mythread子类只用了一次，可以创建匿名内部类的形式简化上述代码:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new Thread()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                for (int i &#x3D; 0;i&lt;100;i++)&#123;</span><br><span class="line">                    System.out.println(&quot;多线程好玩:&quot;+i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;.start();</span><br><span class="line">        for (int i &#x3D; 0;i&lt;10;i++)&#123;</span><br><span class="line">            System.out.println(&quot;多线程真好玩:&quot;+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二种Runnable接口创建（最常用）"><a href="#第二种Runnable接口创建（最常用）" class="headerlink" title="第二种Runnable接口创建（最常用）"></a>第二种Runnable接口创建（最常用）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">直接上代码</span><br><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                for (int i &#x3D; 0;i&lt;100;i++)</span><br><span class="line">                    System.out.println(Thread.currentThread().getName()+&quot;多线程真好玩&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">        for (int i &#x3D; 0;i&lt;100;i++)</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot;多线程不好玩&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于这个Runnable 接口只有run这一个方法需要实现，所以可以利用<strong>Lambda</strong>表达式来进一步简化：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new Thread(()-&gt;&#123;</span><br><span class="line">                for (int i &#x3D; 0;i&lt;100;i++)</span><br><span class="line">                    System.out.println(Thread.currentThread().getName()+&quot;多线程真好玩&quot;+i);</span><br><span class="line">        &#125;).start();</span><br><span class="line">        for (int i &#x3D; 0;i&lt;100;i++)</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot;多线程不好玩&quot;+i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第三种Callalbe创建（带有返回值的接口线程创建）"><a href="#第三种Callalbe创建（带有返回值的接口线程创建）" class="headerlink" title="第三种Callalbe创建（带有返回值的接口线程创建）"></a>第三种Callalbe创建（带有返回值的接口线程创建）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Demo2 &#123;</span><br><span class="line">    public static void main(String[] args) throws ExecutionException, InterruptedException &#123;</span><br><span class="line">        Callable&lt;Integer&gt; c &#x3D; new MyCallable&lt;&gt;();</span><br><span class="line">        FutureTask&lt;Integer&gt; task &#x3D; new FutureTask&lt;&gt;(c);</span><br><span class="line">        new Thread(task).start();</span><br><span class="line">        System.out.println(&quot;子线程的返回值为：&quot;+task.get());</span><br><span class="line">        for(int i &#x3D; 0;i&lt;10;i++)</span><br><span class="line">            System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">    static class MyCallable&lt;Interger&gt; implements Callable &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public Object call() throws Exception &#123;</span><br><span class="line">            for(int i &#x3D; 0;i&lt;10;i++)</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            return 100;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果子线程与主线程之间存在 task.get() 获取子线程的返回值，主线程会等待返回值得到，也就是子线程执行完，再开始执行主线程；<br>如果想停止子线程的运行，通过task.cancel()来停止</p>
+</blockquote>
+<h3 id="三种创建方法的比较"><a href="#三种创建方法的比较" class="headerlink" title="三种创建方法的比较"></a>三种创建方法的比较</h3><blockquote>
+<p>Thread继承与Runnable创建比较<br><img src="http://qd343r17a.bkt.clouddn.com//img/20200710172644.png" alt=""><br>Runnable 与 Callable 比较：<br>Runnable不带返回值，代码实现简单，对主线程影响较小;<br>而Callable带返回值，除了实现call方法外，还要用FutureTask 类来实现返回值的调用，并且调取get()方法会引起主线程阻塞；</p>
+</blockquote>
+<h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><blockquote>
+<p>按照老师的课程，线程的执行过程中，有一下6种状态：New(新建状态)，Runnable(运行状态)，Blocker(阻塞状态)，Waiting/TimedWaiting(有限等待、无限等待状态)，Teminated(终止状态)</p>
+</blockquote>
+<p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710174520.png" alt=""></p>
+<p>查阅了相关书籍后，我觉得按照这个图来形容来划分比较合理：</p>
+<p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710181001.png" alt=""></p>
+<blockquote>
+<p>为什么start()后要划分成就绪跟运行状态？<br>由于线程启动后，不会一直“霸占”着CPU来执行，CPU会在多线程之间来回切换，所以线程也会在运行，就绪之间往复交替；</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechetpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%97%85/">多线程之旅</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -208,101 +310,129 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%97%85/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/07/HashMap%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-07-07T03:49:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/07/HashMap%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashMap详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/07/HashMap%E8%AF%A6%E8%A7%A3/">HashMap详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程之”九阳神功”秘籍"><span class="toc-number">1.</span> <span class="toc-text">多线程之”九阳神功”秘籍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是多线程？"><span class="toc-number">1.1.</span> <span class="toc-text">什么是多线程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的创建与启动"><span class="toc-number">1.2.</span> <span class="toc-text">线程的创建与启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种继承创建"><span class="toc-number">1.2.1.</span> <span class="toc-text">第一种继承创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种Runnable接口创建（最常用）"><span class="toc-number">1.2.2.</span> <span class="toc-text">第二种Runnable接口创建（最常用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三种Callalbe创建（带有返回值的接口线程创建）"><span class="toc-number">1.2.3.</span> <span class="toc-text">第三种Callalbe创建（带有返回值的接口线程创建）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三种创建方法的比较"><span class="toc-number">1.2.4.</span> <span class="toc-text">三种创建方法的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">线程的生命周期</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/26/Finally-%E5%85%B3%E9%94%AE%E5%AD%97%E4%B9%8B%E9%9D%A2%E8%AF%95%E7%9B%B8%E5%85%B3%E6%B1%87%E6%80%BB/" class="archive-article-date">
-  	<time datetime="2020-06-26T00:39:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
+        
+    </div>
+</aside>
 
 
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/26/Finally-%E5%85%B3%E9%94%AE%E5%AD%97%E4%B9%8B%E9%9D%A2%E8%AF%95%E7%9B%B8%E5%85%B3%E6%B1%87%E6%80%BB/">Finally 关键字之面试相关汇总</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="多线程之旅" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "//uqWDMPK30LpNDjbSLW5FGOzo-gzGzoHsz",
+        conf: "//HmHqQMnu3SQ8yuMT0MWwqWaU"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -340,9 +470,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
