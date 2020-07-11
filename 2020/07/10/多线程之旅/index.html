@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>多线程之旅 | CodeJenny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="多线程之”九阳神功”秘籍">
+  <meta name="description" content="前面的学习内容都是只有在main 主线程上运行，如果想让多条线程参与，与主线程并驾齐驱地运行，需要怎么做呢？这本“九阳神功”秘籍会给你答案 多线程之”九阳神功”秘籍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程之旅">
 <meta property="og:url" content="http://yoursite.com/2020/07/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%97%85/index.html">
 <meta property="og:site_name" content="CodeJenny">
-<meta property="og:description" content="多线程之”九阳神功”秘籍">
+<meta property="og:description" content="前面的学习内容都是只有在main 主线程上运行，如果想让多条线程参与，与主线程并驾齐驱地运行，需要怎么做呢？这本“九阳神功”秘籍会给你答案 多线程之”九阳神功”秘籍">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710152151.png">
 <meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710162128.png">
 <meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710172644.png">
 <meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710174520.png">
-<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710181001.png">
+<meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200711095406.png">
 <meta property="og:image" content="http://qd343r17a.bkt.clouddn.com//img/20200710211748.png">
 <meta property="article:published_time" content="2020-07-10T06:29:57.000Z">
-<meta property="article:modified_time" content="2020-07-10T14:17:50.356Z">
+<meta property="article:modified_time" content="2020-07-11T03:49:48.053Z">
 <meta property="article:author" content="CodeJenny">
 <meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
@@ -204,7 +204,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="多线程之”九阳神功”秘籍"><a href="#多线程之”九阳神功”秘籍" class="headerlink" title="多线程之”九阳神功”秘籍"></a>多线程之”九阳神功”秘籍</h1><a id="more"></a>
+        <p>前面的学习内容都是只有在main 主线程上运行，如果想让多条线程参与，与主线程并驾齐驱地运行，需要怎么做呢？这本“九阳神功”秘籍会给你答案</p>
+<h1 id="多线程之”九阳神功”秘籍"><a href="#多线程之”九阳神功”秘籍" class="headerlink" title="多线程之”九阳神功”秘籍"></a>多线程之”九阳神功”秘籍</h1><a id="more"></a>
 
 <h2 id="什么是多线程？"><a href="#什么是多线程？" class="headerlink" title="什么是多线程？"></a>什么是多线程？</h2><p>我们先来看看，什么是线程：</p>
 <p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710152151.png" alt=""></p>
@@ -256,8 +257,10 @@
 <p>按照老师的课程，线程的执行过程中，有一下6种状态：New(新建状态)，Runnable(运行状态)，Blocker(阻塞状态)，Waiting/TimedWaiting(有限等待、无限等待状态)，Teminated(终止状态)</p>
 </blockquote>
 <p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710174520.png" alt=""></p>
+<blockquote>
 <p>查阅了相关书籍后，我觉得按照这个图来形容来划分比较合理：</p>
-<p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710181001.png" alt=""></p>
+</blockquote>
+<p><img src="http://qd343r17a.bkt.clouddn.com//img/20200711095406.png" alt=""></p>
 <blockquote>
 <p>为什么start()后要划分成就绪跟运行状态？<br>由于线程启动后，不会一直“霸占”着CPU来执行，CPU会在多线程之间来回切换，所以线程也会在运行，就绪之间往复交替；</p>
 </blockquote>
@@ -268,21 +271,88 @@
 <p><strong>让线程按下暂停键</strong><br>Thread.sleep()<br>在代码中插入<code>Thread.sleep()</code>后会使程序暂停一段时间，并进入阻塞状态；相比较而言，yield()方法，这个方法只会让线程重新调度一下，并不会暂停；</p>
 </blockquote>
 <blockquote>
-<p>改变程序的优先级<br>Thread.currenttThread().setPriority(5)<br>赋予线程优先级，优先级高的更容易被执行；<br>括号内的数值范围是（1-10）,分别对应10种优先级，也可以调用三个静态常量MAX_PRIORITY/NORM_PRIORITY/MIN_PRIORITY（10/5/1）；</p>
+<p><strong>改变程序的优先级</strong><br>Thread.currenttThread().setPriority(5)<br>赋予线程优先级，优先级高的更容易被执行；<br>括号内的数值范围是（1-10）,分别对应10种优先级，也可以调用三个静态常量MAX_PRIORITY/NORM_PRIORITY/MIN_PRIORITY（10/5/1）；</p>
 </blockquote>
-<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>想象这样一个画面：<br>A , B 同时去银行取钱，然后银行余额都显示1000元，A取500，B取1000，如果 A B两人扣款时间也一样，那银行余额是不是就变成了-500；<br>这样就是线程同步而引发出来的线程不安全行为；</p>
+<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>想象这样一个画面：<br>A , B 同时去银行取钱，然后银行余额都显示1000元，A取500，B取1000，如果 A B两人扣款时间也一样，那银行余额是不是就变成了-500；</p>
+<p>这样就是线程同步而引发出来的线程不安全行为；</p>
 <p><img src="http://qd343r17a.bkt.clouddn.com//img/20200710211748.png" alt=""></p>
 <p>如何去解决线程不安全：</p>
 <blockquote>
-<p>方法1 ：同步代码块</p>
+<p><strong>方法1 ：同步代码块</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">代码如下：</span><br><span class="line">public class Demo4 &#123;&#x2F;&#x2F;线程安全性解读一</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Runnable r &#x3D; new Ticket();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static class Ticket implements Runnable&#123;</span><br><span class="line">        &#x2F;&#x2F;总票数</span><br><span class="line">        private int count &#x3D; 10 ;</span><br><span class="line">        private Object o &#x3D; new Object();</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            while (true) &#123;</span><br><span class="line">                synchronized (o) &#123;&#x2F;&#x2F;在执行方法前插入同步代码块sychronized</span><br><span class="line">                    if(count&gt;0) &#123;</span><br><span class="line">                        System.out.println(Thread.currentThread().getName() + &quot;准备卖票，总票数为：&quot; + count);</span><br><span class="line">                        try &#123;</span><br><span class="line">                            Thread.sleep(1000);</span><br><span class="line">                        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        count--;</span><br><span class="line">                        System.out.println(&quot;卖票成功，余票为：&quot; + count);</span><br><span class="line">                    &#125;else</span><br><span class="line">                        break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>理解如下：</p>
+<p>当Thread-0/Thread-1/Thread-2 到达if 循环前，最先到达的那个线程会被套上 sychronized 给的标记 o，当标记 o 激活时，假定最先到达的是Thread-0，Thread-1/Thread-2 会在原地等待，等待标记消失后再向下执行，而当Thread-0执行完成if中的语句后，标记会被清除，Thread-0会随着循环再一次来到if前，而标记清除后，Thread-1/Thread-2 接收到标记消失命令，再开始往下执行；这个时候谁会执行是不一定的，取决于谁能争抢到时间片；</p>
 </blockquote>
 <blockquote>
-<p>方法2 ：同步方法</p>
+<p><strong>方法2 ：同步方法</strong></p>
+<p>将if后面的代码打包成一个方法，然后用synchronized进行修饰（准确说是进行装饰），代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class Demo5 &#123;&#x2F;&#x2F;线程安全性解读</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Runnable r &#x3D; new Ticket();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">    &#125;</span><br><span class="line">    static class Ticket implements Runnable&#123;</span><br><span class="line">        &#x2F;&#x2F;总票数</span><br><span class="line">        private int count &#x3D; 10 ;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            while (true) &#123;</span><br><span class="line">                this.sale();</span><br><span class="line">                if(count &#x3D;&#x3D; 0)</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        public synchronized void sale()&#123;&#x2F;&#x2F;用synchronized修饰sale()方法，依然放在if前</span><br><span class="line">            if(count&gt;0) &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + &quot;准备卖票，总票数为：&quot; + count);</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(1000);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                count--;</span><br><span class="line">                System.out.println(&quot;卖票成功，余票为：&quot; + count);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
-<p>方法3 ：添加显示锁</p>
+<p><strong>方法3 ：添加显示锁</strong></p>
+<p>上述的两种方式相当于是隐式锁的概念，从Java 5 开始，Java官方添加了一种更强大的线程同步机制——同步锁，由Lock对象充当；</p>
+<p>同步锁一般比较常用的是Lock对象的实现类ReentrantLock（可重入锁），代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public class Demo6 &#123;&#x2F;&#x2F;线程安全性解读</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Runnable r &#x3D; new Ticket();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">        new Thread(r).start();</span><br><span class="line">    &#125;</span><br><span class="line">    static class Ticket implements Runnable&#123;</span><br><span class="line">        &#x2F;&#x2F;总票数</span><br><span class="line">        private int count &#x3D; 10 ;</span><br><span class="line">        private Lock l &#x3D; new ReentrantLock();&#x2F;&#x2F;创建显示同步锁</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            while (true) &#123;</span><br><span class="line">                l.lock();</span><br><span class="line">                if(count&gt;0) &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + &quot;准备卖票，总票数为：&quot; + count);</span><br><span class="line">                    try &#123;</span><br><span class="line">                        Thread.sleep(1000);</span><br><span class="line">                    &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    count--;</span><br><span class="line">                    System.out.println(&quot;卖票成功，余票为：&quot; + count);</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    l.unlock();</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                l.unlock();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2>
+<blockquote>
+<p>ReentrantLock() 括号内可传入boolean 参数，传入true后，锁就变成了公平锁，会让线程排队执行，以上述为例，会依次Thread -0（假设0线程第一个执行）、Thread-1(假设第二个执行)、Thread-2(第三个执行)，会依次 0/1/2、0/1/2的顺序（当然也可以102,201的顺序，取决于谁先抢到时间片，但第一次循环后，顺序就固定下来了）执行，直至线程结束； </p>
+</blockquote>
+<blockquote>
+<p><strong>死锁</strong></p>
+</blockquote>
+<p>在线程同步中，添加同步监视器过多，可能会导致死锁的现象；</p>
+<p>可以这样来理解：在A 运行的代码中加入B的锁，等待B解锁后才能向下执行；又在B运行的代码中加入A 的锁，等待 A 解锁后才向下执行，假如 A 等待 B 的时候，B又在等待 A ，这样死锁就产生了；</p>
+<p>一旦死锁产生，整个程序不会出错，也没有任何提示，整个处于阻塞的状态，无法继续。</p>
+<h2 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h2><blockquote>
+<p><strong>生产者和消费者问题：</strong></p>
+</blockquote>
+<p>A 是生产者，负责生产食物和数量，B 是消费者，负责接收食物和数量，想象一个场景，假如 A 生产两种食物，循环递给B，B负责消费，消费完成后 ，通知A 进行生产 ，依次按顺序循环100次，怎样进行如上的代码实现呢；</p>
+<p>方法一：</p>
+<p>Object 类有三个有助于线程通信的方法，wait() 使当前线程等待，notify() 随机唤醒一个线程，notifyAll()，唤醒所有线程；</p>
+<p>利用这三个方法，再加上标签flag = ture /false ，可以很好的实现如上代码需求；具体代码就不展示了，有点占篇幅；</p>
+<p>方法二：</p>
+<p>使用BlockingQueue（阻塞队列）</p>
+<p>put() 把元素放入队列，如果队列已满，则阻塞该线程</p>
+<p>take() 从队列头取走元素，如果队列已空，则阻塞线程；</p>
+<p>这个不是太会；后面再研究</p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><blockquote>
+<p><strong>为什么需要线程池？</strong></p>
+</blockquote>
+<ol>
+<li>系统创建一个新线程的耗费是很大的，而运行一个线程耗费要小很多，运用线程池的概念，可以很好的提升系统性能；</li>
+<li>线程池可以很好的控制系统中并发线程的数量，即在创建初直接指定并发执行的线程数；</li>
+<li>线程池能提供定时执行、定期执行、单线程、并发数控制等功能</li>
+</ol>
+<blockquote>
+<p><strong>四种线程池的创建</strong></p>
+</blockquote>
+<p>第一种，缓存线程池：</p>
+<p><code>newCachedThreadPool()</code>，创建一个具有缓存功能的线程池，可灵活回收空闲线程；</p>
+<p>第二种，定长线程池：</p>
+<p><code>newFixedThreadPool(初始线程数)</code>，初始线程数一旦被固定，就只能使固定数量的线程并发运行；</p>
+<p>第三种，单线程线程池</p>
+<p><code>newSingleThreadExecutor()</code> ，创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务</p>
+<p>第四种，周期执行线程池</p>
+<p><code>newScheduledThreadPool()</code>，创建一个定长线程池，支持定时及周期性任务执</p>
+<h2 id="多线程面试题"><a href="#多线程面试题" class="headerlink" title="多线程面试题"></a>多线程面试题</h2><p>参考链接：<a href="https://blog.csdn.net/cmyperson/article/details/79610870" target="_blank" rel="noopener">50个多线程面试题汇总</a></p>
+<p><strong>什么是线程？</strong></p>
+<p>线程是操作系统能够进行运算调度的最小单位，它被包含在进程之中，是进程中的实际运作单位，可以使用多线程对进行运算提速。</p>
+<p>比如，如果一个线程完成一个任务要100毫秒，那么用十个线程完成改任务只需10毫秒</p>
+<p><strong>什么是线程安全和线程不安全？</strong></p>
+<p>线程安全: 就是多线程访问时，采用了加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问，直到该线程读取完，其他线程才可使用。不会出现数据不一致或者数据污染</p>
+<p>线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据造成所得到的数据是脏数据</p>
+<p><strong>什么是自旋锁？</strong></p>
+<p>当线程A想要获取一把自旋锁而该锁又被其它线程锁持有时，线程A会在一个循环中自旋以检测锁是不是已经可用了</p>
+<p><strong>什么是乐观锁和悲观锁？</strong></p>
+<p>悲观锁</p>
+<p>Java在JDK1.5之前都是靠synchronized关键字保证同步的，这种通过使用一致的锁定协议来协调对共享状态的访问，可以确保无论哪个线程持有共享变量的锁，都采用独占的方式来访问这些变量。独占锁其实就是一种悲观锁，所以可以说synchronized是悲观锁。</p>
+<p>乐观锁</p>
+<p>乐观锁（ Optimistic Locking）其实是一种思想。相对悲观锁而言，乐观锁假设认为数据一般情况下不会造成冲突，所以在数据进行提交更新的时候，才会正式对数据的冲突与否进行检测，如果发现冲突了，则让返回用户错误的信息，让用户决定如何去做</p>
+<p>==============================</p>
+<p>还有很多题目，详见参考链接，就不一一赘述了；</p>
+<p>全剧终</p>
+
       
 
       
@@ -425,7 +495,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程之”九阳神功”秘籍"><span class="toc-number">1.</span> <span class="toc-text">多线程之”九阳神功”秘籍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是多线程？"><span class="toc-number">1.1.</span> <span class="toc-text">什么是多线程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的创建与启动"><span class="toc-number">1.2.</span> <span class="toc-text">线程的创建与启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种继承创建"><span class="toc-number">1.2.1.</span> <span class="toc-text">第一种继承创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种Runnable接口创建（最常用）"><span class="toc-number">1.2.2.</span> <span class="toc-text">第二种Runnable接口创建（最常用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三种Callalbe创建（带有返回值的接口线程创建）"><span class="toc-number">1.2.3.</span> <span class="toc-text">第三种Callalbe创建（带有返回值的接口线程创建）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三种创建方法的比较"><span class="toc-number">1.2.4.</span> <span class="toc-text">三种创建方法的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">线程的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制线程"><span class="toc-number">1.4.</span> <span class="toc-text">控制线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程同步"><span class="toc-number">1.5.</span> <span class="toc-text">线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程池"><span class="toc-number">1.6.</span> <span class="toc-text">线程池</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程之”九阳神功”秘籍"><span class="toc-number">1.</span> <span class="toc-text">多线程之”九阳神功”秘籍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是多线程？"><span class="toc-number">1.1.</span> <span class="toc-text">什么是多线程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的创建与启动"><span class="toc-number">1.2.</span> <span class="toc-text">线程的创建与启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种继承创建"><span class="toc-number">1.2.1.</span> <span class="toc-text">第一种继承创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种Runnable接口创建（最常用）"><span class="toc-number">1.2.2.</span> <span class="toc-text">第二种Runnable接口创建（最常用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三种Callalbe创建（带有返回值的接口线程创建）"><span class="toc-number">1.2.3.</span> <span class="toc-text">第三种Callalbe创建（带有返回值的接口线程创建）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三种创建方法的比较"><span class="toc-number">1.2.4.</span> <span class="toc-text">三种创建方法的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">线程的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制线程"><span class="toc-number">1.4.</span> <span class="toc-text">控制线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程同步"><span class="toc-number">1.5.</span> <span class="toc-text">线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程通信"><span class="toc-number">1.6.</span> <span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程池"><span class="toc-number">1.7.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程面试题"><span class="toc-number">1.8.</span> <span class="toc-text">多线程面试题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
