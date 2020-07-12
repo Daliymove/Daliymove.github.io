@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Finally 关键字之面试相关汇总, CodeJenny">
+    <meta name="keywords" content="HashMap之深入浅出, CodeJenny">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Finally 关键字之面试相关汇总 | CodeJenny</title>
+    <title>HashMap之深入浅出 | CodeJenny</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -127,58 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>多媒体</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/movies">
-          
-          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Movies</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -282,61 +230,6 @@
           
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			多媒体
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/movies " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Movies</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
-          
-        </li>
-        
         
         <li><div class="divider"></div></li>
         <li>
@@ -416,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Finally 关键字之面试相关汇总</h1>
+                    <h1 class="description center-align post-title">HashMap之深入浅出</h1>
                 </div>
             </div>
         </div>
@@ -554,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-26
+                    2020-07-10
                 </div>
                 
 
@@ -563,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    66
                 </div>
                 
 
@@ -575,180 +468,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Finally-关键字"><a href="#Finally-关键字" class="headerlink" title="Finally 关键字"></a>Finally 关键字</h1><a id="more"></a>
-
-<h2 id="Finally-是什么？"><a href="#Finally-是什么？" class="headerlink" title="Finally 是什么？"></a>Finally 是什么？</h2><p>有一些代码，可能会希望try块中的异常无论是否抛出，都需要执行某一些语句，这个时候，我们就用到了finally;</p>
-<pre><code>try块语法：
-try{
-
-}catch(异常类 形参){
-
-}finally{
-
-}
-
-try块 catch和finally可任选一个，一般两个都写，不可以两个都不写；</code></pre><h2 id="Finally常见问题"><a href="#Finally常见问题" class="headerlink" title="Finally常见问题"></a>Finally常见问题</h2><h3 id="1-try语句中有异常，finally-语句块会执行吗？"><a href="#1-try语句中有异常，finally-语句块会执行吗？" class="headerlink" title="1. try语句中有异常，finally 语句块会执行吗？"></a>1. try语句中有异常，finally 语句块会执行吗？</h3><p>这个答案是肯定的。finally语句的优先级等级很高，只要不涉及一些关键字眼，如<strong>JVM异常关闭</strong>,<strong>系统异常崩溃</strong>等，finally中的语句总是会执行的，不管是否有异常抛出。</p>
-<h3 id="2-finally-与-continue-break之间的关系"><a href="#2-finally-与-continue-break之间的关系" class="headerlink" title="2. finally 与 continue,break之间的关系"></a>2. finally 与 continue,break之间的关系</h3><pre><code>continue与break 代表着跳出本次循环、结束本次循环，finally遇上这两个代码会怎么样呢？
-
-请看以下代码：
-
-public class FinallyLearn {
-
-public static void main(String[] args) {
-
-    try {
-        for (int i = 0; i &lt; 5; i++) {
-            System.out.println(i);
-            if (i == 3) {
-                break;//continue也一样
-            }
-        }
-    }catch(Exception e) {
-        System.out.println("有异常，请检查");
-    }finally {
-        System.out.println("一定会执行");
-        }
-
-    }
-}
-
-输出：
-0
-1
-2
-3
-一定会执行
-
-可以看到即使跳出了循环，finally语句中的内容依然会执行</code></pre><h3 id="3-finally与return的关系"><a href="#3-finally与return的关系" class="headerlink" title="3. finally与return的关系"></a>3. finally与return的关系</h3><pre><code>return的执行逻辑：
-
-    1. 复制一份return后的表达式至操作数栈顶，计算表达式的值，将表达式的值保存至操作数栈顶
-    2. 检查后续代码有无finally
-    3. 若有，则优先执行finally内的代码，再返回操作数栈顶的值
-    4. 若没有，则直接返回操作数栈顶的值
-
-
-观察下面代码：
-
-public class FinallyLearn {
-
-public static void main(String[] args){
-
-        System.out.println(say());
-
-}
-
-public static int say() {
-
-        int a =0;
-        try {
-            a = 10;
-            return a;
-        }finally {
-            a = 20;
-        }
-
-    }
-}
-
-想一想输出的值是什么？</code></pre><p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2328241580,270776270&amp;fm=26&amp;gp=0.jpg" alt="思考"></p>
-<pre><code>
-
-
-
-答案为：10
-
-通过上面的4步，很容易判断，操作数栈顶的保存的值为10，虽然后面通过finally中的语句使a的值变为了20，但return返回的值仍是10；</code></pre><p>看看网上的一个面试题：</p>
-<p><img src="https://i.loli.net/2020/06/26/BQDrToY9O5mX8q4.png" alt="mianshi.png"></p>
-<pre><code>想一想答案是什么？
-
-下面我们通过画图来演示一下</code></pre><p><img src="https://i.loli.net/2020/06/26/BXoIRxgl6yrwpKE.png" alt="tupian"></p>
-<pre><code>所以第一行打印Test1()的时候，先打印try语句中的'A',然后将'A'保存至操作数栈，后面打印finally语句中的'B',将Label的值变为'B',Test1()的返回值为'A',Label的值为'B';
-
-输出的值为： A***;</code></pre><p><strong>升华一下</strong></p>
-<pre><code>我们来变一下，倘若在finally后面加上return语句，结果会不会不一样呢？
-
-代码如下：
-public class ReturnLearn {
-
-    static char Label;
-
-    public static void main(String[] args){
-        System.out.println(say());
-        System.out.println(Label);
-    }
-
-    public static char say() {
-        try {
-            System.out.println('A');
-            return Label = 'A';
-        }
-        finally {
-            System.out.println('B');
-            return Label = 'B';
-        }
-    }
-}
-
-这下返回的结果会是什么样呢？</code></pre><p><img src="https://tse3-mm.cn.bing.net/th/id/OIP.hoS8C8Tvn6ahI_XKFt2NwwHaHV?pid=Api&amp;rs=1" alt="a"></p>
-<pre><code>对没错,输出的就是A***
-
-解释如下：
-
-第一个return,是将'A'储存进了操作数栈顶，然后在执行finally语句的时候，又一次的将'B'保存在了操作数栈顶，所以最终返回值跟Label的值都为'B';</code></pre><p><strong>再升华一下</strong></p>
-<pre><code>大家是不是对于finally与return的关系掌握得更具体了呢，再升华一点，如果在try 块后面加上return 'A';try 块内添加catch(Expection e)语句，结果会怎么样？
-
-代码如下：
-public class ReturnLearn {
-
-    static char Label;
-
-    public static void main(String[] args){
-        System.out.println(say());
-        System.out.println(Label);
-    }
-
-    public static char say() {
-        try {
-            System.out.println('A');
-            return Label = 'A';
-        }catch(Exception e) {
-        }
-        finally {
-            System.out.println('B');
-            Label = 'B';
-        }
-        return 'C';
-    }
-}
-
-想一想结果会怎样？
-
-大脑一片空白··········
+                <h1 id="HashMap-详解"><a href="#HashMap-详解" class="headerlink" title="HashMap 详解"></a>HashMap 详解</h1><hr>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-emmm  问师傅 我也不知道！
-
-
-此处省略一万字。。。。</code></pre><p><img src="https://i.loli.net/2020/06/26/VtdEGlsar4be2WU.jpg" alt="aa.jpeg"></p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>!(<a href="https://blog.csdn.net/sinat_22594643/article/details/80509266" target="_blank" rel="noopener">https://blog.csdn.net/sinat_22594643/article/details/80509266</a>)<br>!(<a href="https://blog.csdn.net/WYpersist/article/details/80710352" target="_blank" rel="noopener">https://blog.csdn.net/WYpersist/article/details/80710352</a>)<br>!(<a href="https://www.jianshu.com/p/144a4496575a" target="_blank" rel="noopener">https://www.jianshu.com/p/144a4496575a</a>)</p>
-<p>仅仅代表一些很基础的个人观点，希望大家能积极指出不足，我一定好好修改的，希望我能跟小伙伴们一起进步！</p>
+<p>大叫好，争取明天能开个头</p>
+<p><img src="https://dn-odum9helk.qbox.me/resource/gogopher.jpg" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -782,7 +508,7 @@ emmm  问师傅 我也不知道！
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">CodeJenny</a>
+                    <a href="/about" rel="external nofollow noreferrer">codejenny</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -792,7 +518,7 @@ emmm  问师傅 我也不知道！
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://codejenny.top/2020/06/26/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/">https://codejenny.top/2020/06/26/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/</a>
+                    <a href="https://codejenny.top/2020/07/10/hashmap-xiang-jie/">https://codejenny.top/2020/07/10/hashmap-xiang-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -805,7 +531,7 @@ emmm  问师傅 我也不知道！
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">CodeJenny</a>
+                    <a href="/about" target="_blank">codejenny</a>
                     !
                 </span>
             </div>
@@ -1003,40 +729,29 @@ emmm  问师傅 我也不知道！
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/07/hashmap-xiang-jie/">
+                <a href="/2020/07/11/duo-xian-cheng-zhi-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="HashMap详解">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="多线程之九阳神功秘籍">
                         
-                        <span class="card-title">HashMap详解</span>
+                        <span class="card-title">多线程之九阳神功秘籍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HashMap 详解
-
-
-
-
-
-大叫好，争取明天能开个头
-
-
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-           
+                            日常学习之多线程的学习之路
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            CodeJenny
+                            codejenny
                             
                         </span>
                     </div>
@@ -1059,45 +774,29 @@ emmm  问师傅 我也不知道！
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/26/wo-de-di-yi-pian-bo-ke-bi-ji/">
+                <a href="/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Finally 关键字之面试相关汇总">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Finally之未解之谜">
                         
-                        <span class="card-title">Finally 关键字之面试相关汇总</span>
+                        <span class="card-title">Finally之未解之谜</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown的使用方法（小白篇）
-
-
-
-标题类#+空格+一级标题 = 一级标题
-##+空格+二级标题 = 二级标题
-###+空格+三级标题 = 三级标题
-####+空格+四级标题 = 四级标题
-……
-共六级标题
-类似这个样式
-
-区块与引
+                            Finally关键字的学习
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%85%A5%E9%97%A8/" class="post-category">
-                                    入门
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            codejenny
                             
                         </span>
                     </div>
@@ -1105,8 +804,8 @@ emmm  问师傅 我也不知道！
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">技术</span>
                     </a>
                     
                 </div>
