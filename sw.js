@@ -28,9 +28,9 @@ var precacheUrls = [];
 
   precacheUrls.push('/2020/07/10/hashmap-xiang-jie/');
 
-  precacheUrls.push('/2020/07/11/duo-xian-cheng-zhi-lu/');
-
   precacheUrls.push('/2020/06/30/wo-de-di-yi-pian-bo-ke-bi-ji/');
+
+  precacheUrls.push('/2020/07/11/duo-xian-cheng-zhi-lu/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
