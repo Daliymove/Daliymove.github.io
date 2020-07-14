@@ -160,7 +160,8 @@
     loaded();
 })()
  </script><meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="CodeJenny" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><style type="text/css" lang="css">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><style type="text/css" lang="css">
     #loading-container{
         position: fixed;
         top: 0;
@@ -705,10 +706,27 @@
                                 <span class="chip bg-color">技术</span>
                             </a>
                         
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/finally/">
+                                <span class="chip bg-color">finally</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
+                                面试
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -750,69 +768,71 @@ try{
 }
 
 try块 catch和finally可任选一个，一般两个都写，不可以两个都不写；</code></pre><h2 id="Finally常见问题"><a href="#Finally常见问题" class="headerlink" title="Finally常见问题"></a>Finally常见问题</h2><h3 id="1-try语句中有异常，finally-语句块会执行吗？"><a href="#1-try语句中有异常，finally-语句块会执行吗？" class="headerlink" title="1. try语句中有异常，finally 语句块会执行吗？"></a>1. try语句中有异常，finally 语句块会执行吗？</h3><p>这个答案是肯定的。finally语句的优先级等级很高，只要不涉及一些关键字眼，如<strong>JVM异常关闭</strong>,<strong>系统异常崩溃</strong>等，finally中的语句总是会执行的，不管是否有异常抛出。</p>
-<h3 id="2-finally-与-continue-break之间的关系"><a href="#2-finally-与-continue-break之间的关系" class="headerlink" title="2. finally 与 continue,break之间的关系"></a>2. finally 与 continue,break之间的关系</h3><pre><code>continue与break 代表着跳出本次循环、结束本次循环，finally遇上这两个代码会怎么样呢？
+<h3 id="2-finally-与-continue-break之间的关系"><a href="#2-finally-与-continue-break之间的关系" class="headerlink" title="2. finally 与 continue,break之间的关系"></a>2. finally 与 continue,break之间的关系</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">continue</span>与<span class="token keyword">break</span> 代表着跳出本次循环、结束本次循环，<span class="token keyword">finally</span>遇上这两个代码会怎么样呢？
 
 请看以下代码：
 
-public class FinallyLearn {
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FinallyLearn</span> <span class="token punctuation">{</span>
 
-public static void main(String[] args) {
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    try {
-        for (int i = 0; i &lt; 5; i++) {
-            System.out.println(i);
-            if (i == 3) {
-                break;//continue也一样
-            }
-        }
-    }catch(Exception e) {
-        System.out.println("有异常，请检查");
-    }finally {
-        System.out.println("一定会执行");
-        }
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//continue也一样</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"有异常，请检查"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"一定会执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 输出：
-0
-1
-2
-3
+<span class="token number">0</span>
+<span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
 一定会执行
 
-可以看到即使跳出了循环，finally语句中的内容依然会执行</code></pre><h3 id="3-finally与return的关系"><a href="#3-finally与return的关系" class="headerlink" title="3. finally与return的关系"></a>3. finally与return的关系</h3><pre><code>return的执行逻辑：
+可以看到即使跳出了循环，<span class="token keyword">finally</span>语句中的内容依然会执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-finally与return的关系"><a href="#3-finally与return的关系" class="headerlink" title="3. finally与return的关系"></a>3. finally与return的关系</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">return</span>的执行逻辑：
 
-    1. 复制一份return后的表达式至操作数栈顶，计算表达式的值，将表达式的值保存至操作数栈顶
-    2. 检查后续代码有无finally
-    3. 若有，则优先执行finally内的代码，再返回操作数栈顶的值
-    4. 若没有，则直接返回操作数栈顶的值
+    <span class="token number">1</span><span class="token punctuation">.</span> 复制一份<span class="token keyword">return</span>后的表达式至操作数栈顶，计算表达式的值，将表达式的值保存至操作数栈顶
+    <span class="token number">2</span><span class="token punctuation">.</span> 检查后续代码有无<span class="token keyword">finally</span>
+    <span class="token number">3</span><span class="token punctuation">.</span> 若有，则优先执行<span class="token keyword">finally</span>内的代码，再返回操作数栈顶的值
+    <span class="token number">4</span><span class="token punctuation">.</span> 若没有，则直接返回操作数栈顶的值
 
 
 观察下面代码：
 
-public class FinallyLearn {
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FinallyLearn</span> <span class="token punctuation">{</span>
 
-public static void main(String[] args){
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-        System.out.println(say());
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-}
+<span class="token punctuation">}</span>
 
-public static int say() {
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        int a =0;
-        try {
-            a = 10;
-            return a;
-        }finally {
-            a = 20;
-        }
+        <span class="token keyword">int</span> a <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            a <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-想一想输出的值是什么？</code></pre><p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2328241580,270776270&amp;fm=26&amp;gp=0.jpg" alt="思考"></p>
+想一想输出的值是什么？<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2328241580,270776270&amp;fm=26&amp;gp=0.jpg" alt="思考"></p>
 <pre><code>
 
 
@@ -827,61 +847,62 @@ public static int say() {
 <pre><code>所以第一行打印Test1()的时候，先打印try语句中的'A',然后将'A'保存至操作数栈，后面打印finally语句中的'B',将Label的值变为'B',Test1()的返回值为'A',Label的值为'B';
 
 输出的值为： A***;</code></pre><p><strong>升华一下</strong></p>
-<pre><code>我们来变一下，倘若在finally后面加上return语句，结果会不会不一样呢？
+<pre class="line-numbers language-java"><code class="language-java">我们来变一下，倘若在<span class="token keyword">finally</span>后面加上<span class="token keyword">return</span>语句，结果会不会不一样呢？
 
 代码如下：
-public class ReturnLearn {
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ReturnLearn</span> <span class="token punctuation">{</span>
 
-    static char Label;
+    <span class="token keyword">static</span> <span class="token keyword">char</span> Label<span class="token punctuation">;</span>
 
-    public static void main(String[] args){
-        System.out.println(say());
-        System.out.println(Label);
-    }
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Label<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public static char say() {
-        try {
-            System.out.println('A');
-            return Label = 'A';
-        }
-        finally {
-            System.out.println('B');
-            return Label = 'B';
-        }
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">char</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> Label <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> Label <span class="token operator">=</span> <span class="token string">'B'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-这下返回的结果会是什么样呢？</code></pre><p><img src="https://tse3-mm.cn.bing.net/th/id/OIP.hoS8C8Tvn6ahI_XKFt2NwwHaHV?pid=Api&amp;rs=1" alt="a"></p>
+这下返回的结果会是什么样呢？<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://tse3-mm.cn.bing.net/th/id/OIP.hoS8C8Tvn6ahI_XKFt2NwwHaHV?pid=Api&amp;rs=1" alt="a"></p>
 <pre><code>对没错,输出的就是A***
 
 解释如下：
 
 第一个return,是将'A'储存进了操作数栈顶，然后在执行finally语句的时候，又一次的将'B'保存在了操作数栈顶，所以最终返回值跟Label的值都为'B';</code></pre><p><strong>再升华一下</strong></p>
-<pre><code>大家是不是对于finally与return的关系掌握得更具体了呢，再升华一点，如果在try 块后面加上return 'A';try 块内添加catch(Expection e)语句，结果会怎么样？
+<pre class="line-numbers language-java"><code class="language-java">大家是不是对于<span class="token keyword">finally</span>与<span class="token keyword">return</span>的关系掌握得更具体了呢，再升华一点，如果在<span class="token keyword">try</span> 块后面加上<span class="token keyword">return</span> <span class="token string">'A'</span><span class="token punctuation">;</span><span class="token keyword">try</span> 块内添加<span class="token keyword">catch</span><span class="token punctuation">(</span>Expection e<span class="token punctuation">)</span>语句，结果会怎么样？
 
 代码如下：
-public class ReturnLearn {
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ReturnLearn</span> <span class="token punctuation">{</span>
 
-    static char Label;
+    <span class="token keyword">static</span> <span class="token keyword">char</span> Label<span class="token punctuation">;</span>
 
-    public static void main(String[] args){
-        System.out.println(say());
-        System.out.println(Label);
-    }
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Label<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public static char say() {
-        try {
-            System.out.println('A');
-            return Label = 'A';
-        }catch(Exception e) {
-        }
-        finally {
-            System.out.println('B');
-            Label = 'B';
-        }
-        return 'C';
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">char</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> Label <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Label <span class="token operator">=</span> <span class="token string">'B'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token string">'C'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 想一想结果会怎样？
 
@@ -908,7 +929,8 @@ public class ReturnLearn {
 emmm  问师傅 我也不知道！
 
 
-此处省略一万字。。。。</code></pre><p><img src="https://i.loli.net/2020/06/26/VtdEGlsar4be2WU.jpg" alt="aa.jpeg"></p>
+此处省略一万字。。。。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2020/06/26/VtdEGlsar4be2WU.jpg" alt="aa.jpeg"></p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>!(<a href="https://blog.csdn.net/sinat_22594643/article/details/80509266" target="_blank" rel="noopener">https://blog.csdn.net/sinat_22594643/article/details/80509266</a>)<br>!(<a href="https://blog.csdn.net/WYpersist/article/details/80710352" target="_blank" rel="noopener">https://blog.csdn.net/WYpersist/article/details/80710352</a>)<br>!(<a href="https://www.jianshu.com/p/144a4496575a" target="_blank" rel="noopener">https://www.jianshu.com/p/144a4496575a</a>)</p>
 <p>仅仅代表一些很基础的个人观点，希望大家能积极指出不足，我一定好好修改的，希望我能跟小伙伴们一起进步！</p>
 <script>
@@ -944,7 +966,7 @@ emmm  问师傅 我也不知道！
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">codejenny</a>
+                    <a href="/about" rel="external nofollow noreferrer">CodeJenny</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -967,7 +989,7 @@ emmm  问师傅 我也不知道！
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">codejenny</a>
+                    <a href="/about" target="_blank">CodeJenny</a>
                     !
                 </span>
             </div>
@@ -994,6 +1016,14 @@ emmm  问师傅 我也不知道！
                             
                                 <a href="/tags/%E6%8A%80%E6%9C%AF/">
                                     <span class="chip bg-color">技术</span>
+                                </a>
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                                <a href="/tags/finally/">
+                                    <span class="chip bg-color">finally</span>
                                 </a>
                             
                         </div>
@@ -1213,8 +1243,12 @@ emmm  问师傅 我也不知道！
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            codejenny
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1224,6 +1258,14 @@ emmm  问师傅 我也不知道！
                     
                     <a href="/tags/%E6%8A%80%E6%9C%AF/">
                         <span class="chip bg-color">技术</span>
+                    </a>
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/HashMap/">
+                        <span class="chip bg-color">HashMap</span>
                     </a>
                     
                 </div>
@@ -1241,9 +1283,9 @@ emmm  问师傅 我也不知道！
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Markdown使用">
                         
-                        <span class="card-title">我的第一篇博客</span>
+                        <span class="card-title">Markdown使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1297,8 +1339,6 @@ emmm  问师傅 我也不知道！
 
 
 <!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1622,7 +1662,7 @@ $(function () {
     
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1594685650112')
+  navigator.serviceWorker.register('/sw.js?t=1594692861298')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
