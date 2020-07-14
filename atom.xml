@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codejenny.top/"/>
-  <updated>2020-07-13T01:50:22.554Z</updated>
+  <updated>2020-07-14T00:12:17.621Z</updated>
   <id>https://codejenny.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://codejenny.top/2020/07/11/duo-xian-cheng-zhi-lu/"/>
     <id>https://codejenny.top/2020/07/11/duo-xian-cheng-zhi-lu/</id>
     <published>2020-07-11T03:20:23.000Z</published>
-    <updated>2020-07-13T01:50:22.554Z</updated>
+    <updated>2020-07-14T00:12:17.621Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,8 @@
     
     </summary>
     
+    
+      <category term="学习" scheme="https://codejenny.top/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="技术" scheme="https://codejenny.top/tags/%E6%8A%80%E6%9C%AF/"/>
