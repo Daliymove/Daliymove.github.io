@@ -28,9 +28,9 @@ var precacheUrls = [];
 
   precacheUrls.push('/2020/06/30/wo-de-di-yi-pian-bo-ke-bi-ji/');
 
-  precacheUrls.push('/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/');
-
   precacheUrls.push('/2020/07/11/duo-xian-cheng-zhi-lu/');
+
+  precacheUrls.push('/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
