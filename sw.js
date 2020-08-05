@@ -28,9 +28,9 @@ var precacheUrls = [];
 
   precacheUrls.push('/2020/07/08/hashmap-xiang-jie/');
 
-  precacheUrls.push('/2020/07/18/java-xu-ni-ji-zhi-chu-chu-mao-lu/');
-
   precacheUrls.push('/2020/08/05/mysql-zong-jie/');
+
+  precacheUrls.push('/2020/07/18/java-xu-ni-ji-zhi-chu-chu-mao-lu/');
 
   precacheUrls.push('/2020/07/28/suan-fa-de-xue-xi-zhi-lu/');
 
