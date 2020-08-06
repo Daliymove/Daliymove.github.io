@@ -24,11 +24,11 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/');
-
   precacheUrls.push('/2020/07/08/hashmap-xiang-jie/');
 
   precacheUrls.push('/2020/08/05/mysql-zong-jie/');
+
+  precacheUrls.push('/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/');
 
   precacheUrls.push('/2020/07/18/java-xu-ni-ji-zhi-chu-chu-mao-lu/');
 
