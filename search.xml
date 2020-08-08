@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>mysql索引及SQL语句优化</title>
+      <link href="/2020/08/08/mysql-suo-yin/"/>
+      <url>/2020/08/08/mysql-suo-yin/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Mysql索引"><a href="#Mysql索引" class="headerlink" title="Mysql索引"></a>Mysql索引</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">-- mysql文件保存位置</span><br><span class="line">show global variables like "%datadir%";</span><br><span class="line"></span><br><span class="line">-- MySQL8.0 以元数据文件、非事务表来存储的文件被删除了，比如：.frm, .par, .trn, .isl, .db.opt等都在MySQL8.0中不存在了用专门的表空间mysql.idb来存储。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查看表索引</span><br><span class="line">-- show index from orders;</span><br><span class="line">-- show keys from users;</span><br><span class="line">-- desc users;</span><br><span class="line">-- show create table users;</span><br><span class="line"></span><br><span class="line"># 主键索引与普通索引</span><br><span class="line">-- explain select * from orders where cust_id = 10001;</span><br><span class="line">-- explain select * from orders where order_num =20005;</span><br><span class="line"></span><br><span class="line"># 添加唯一索引 失败</span><br><span class="line">-- alter table orderitems add unique u_pid(prod_id);</span><br><span class="line"></span><br><span class="line"># 添加普通索引</span><br><span class="line">-- alter table users add index in_age(age);</span><br><span class="line">-- explain select * from users where age&gt;25;</span><br><span class="line"># 删除普通索引</span><br><span class="line">-- drop index in_age on users;</span><br><span class="line"></span><br><span class="line"># 全文索引</span><br><span class="line">-- explain select * from productnotes where note_text like 'Customer%';</span><br><span class="line"></span><br><span class="line"># 联合索引</span><br><span class="line">-- explain select * from orderitems where order_item = 1;</span><br><span class="line">-- explain select * from orderitems where order_num = 20005;</span><br><span class="line">-- explain select * from orderitems where order_item = 1 and order_num = 20005;</span><br></pre></td></tr></tbody></table></figure><p>按照老师提供的文档进行了1000W 条数据的插入，想看看索引到底会占多少的存储空间，然后花了半小时才加到了44W 行，果断放弃了!</p><hr><p>添加索引前文件大小：</p><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/image-20200808112138351.png" alt=""></p><p>查找 age=18 花费时间：</p><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/image-20200808123622779.png" alt=""></p><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/a1_%E7%88%B1%E5%A5%87%E8%89%BA_%E7%88%B1%E5%A5%87%E8%89%BA.jpg" alt="">添加普通索引后文件大小：</p><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/a33.png" alt=""></p><p>查找 age=18 花费时间：</p><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/a4.png" alt=""></p><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/a2.png" alt=""></p><p>具体原因可能是优化器的优化选择方面出了问题（原因未知）；</p><p>文件内容：共44W行数据；</p><p><strong>注意： drop index 删除索引并不会删除存储空间，我理解的是只是断开了与建立索引的链接，并且，后续假如建立相同名称的索引，是不需要消耗空间的；</strong></p><p>具体如何删除表中索引并释放空间的方法没有查到；</p><h2 id="书写高质量的Mysql-语句"><a href="#书写高质量的Mysql-语句" class="headerlink" title="书写高质量的Mysql 语句"></a>书写高质量的Mysql 语句</h2><p>参考链接：<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486461&amp;idx=1&amp;sn=60a22279196d084cc398936fe3b37772&amp;chksm=cea24436f9d5cd20a4fa0e907590f3e700d7378b3f608d7b33bb52cfb96f503b7ccb65a1deed&amp;token=1987003517&amp;lang=zh_CN%23rd" target="_blank" rel="noopener">书写高质量SQL的30条建议</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+            <tag> SQL索引 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机网络面试题</title>
+      <link href="/2020/08/07/ji-suan-ji-wang-luo-ji-chu/"/>
+      <url>/2020/08/07/ji-suan-ji-wang-luo-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-HTTP-协议"><a href="#1-HTTP-协议" class="headerlink" title="1. HTTP 协议"></a>1. HTTP 协议</h2><p>超文本传输协议（英文：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的<strong>应用层协议</strong>。HTTP是万维网的数据通信的基础</p><p>http是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。请求和响应消息的头以ASCII码形式给出；而消息内容则具有一个类似MIME的格式。这个简单模型是早期Web成功的有功之臣，因为它使得开发和部署是那么的直截了当。</p><h2 id="2-OSI与TCP-IP各层的结构与功能"><a href="#2-OSI与TCP-IP各层的结构与功能" class="headerlink" title="2. OSI与TCP/IP各层的结构与功能"></a>2. OSI与TCP/IP各层的结构与功能</h2><blockquote><p>学习计算机⽹络时一般我们会将 OSI 和 TCP/IP 的优点进行合并，采用一种只有五层协议的体系结构，如下图所示，这样既简洁⼜能将概念阐述清楚</p></blockquote><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/20200807090901.png" alt=""></p><ul><li>网络通信过程</li></ul><p>在<a href="https://baike.baidu.com/item/网络通信/9636548" target="_blank" rel="noopener">网络通信</a>的过程中，将发出数据的主机称为源主机，接收数据的主机称为目的主机。当源主机发出数据时，数据在源主机中从上层向下层传送。源主机中的应用进程先将数据交给应用层，应用层加上必要的控制信息就成了报文流，向下传给传输层。传输层将收到的数据单元加上本层的控制信息，形成报文段、数据报，再交给网际层。网际层加上本层的控制信息，形成IP数据报，传给网络接口层。网络接口层将网际层交下来的IP数据报组装成帧，并以比特流的形式传给网络硬件（即物理层），数据就离开源主机。</p><ul><li>相关层定义及协议（了解，没怎么弄明白）</li></ul><p><strong>应用层</strong></p><p><strong>应用层作用：定义数据格式并按照对应的格式解读数据。</strong></p><p>应用层的协议很多，比如域名系统DNS，万维网HTTP协议，支持电子邮件的SMTP协议等；</p><p>通常我们把应用层交互的数据单元称为 <strong>报文</strong>；</p><p><strong>传输层</strong></p><p><strong>传输层负责提供两节点之间数据的可靠传送，当两节点的联系确定之后，传输层则负责监督工作</strong></p><p>其主要使用以下两种协议：</p><ol><li><p>传输控制协议 TCP（Transmission Control Protocol）提供面向连接的，可靠的数据传输服务。 </p></li><li><p>用户数据协议 UDP（User Datagram Protocol）提供无连接的，尽最大努力的数据传输服务 （不保证数据传输的可靠性）。</p></li></ol><p><strong>网络层</strong></p><p><strong>网络层主要解决不同子网间的通信</strong>。</p><p>在计算机网络络中进行通信的两个计算机之间可能会经过很多个数据链路，也可能还要经过很多通信子网。网络层的任务就是选择合适的网间路由和交换结点， 确保数据及时传送，在发送数据时，网络层把运输层产生的报文段或用户数据报封装成分组和包进行传送。在 TCP/IP 体系结构中，由于网络层使用的是IP协议，因此分组也叫 IP 数据报 ，简称数据报</p><p><strong>数据链路层</strong></p><p>该层的主要功能是：<strong>通过各种控制协议，将有差错的物理信道变为无差错的、能可靠传输数据帧的数据链路</strong></p><p>数据链路层(data link layer)通常简称为链路层。两台主机之间的数据传输，总是在一段一段的链路上传送的，这就需要使用专门的链路层的协议。在两个相邻节点之间传送数据时，数据链路层将网络层交下来的 IP 数据报组装成帧，在两个相邻节点间的链路上传送帧。每一帧包括数据和必要的控制信息（如同步信息，地址信息，差错控制等）</p><p><strong>物理层</strong></p><p><strong>利用传输介质为数据链路层提供物理连接，实现比特流的透明传输。</strong></p><p>物理层的作用是实现相邻计算机节点之间比特流的透明传送，尽可能屏蔽掉具体传输介质和物理设备的差异。使其上面的数据链路层不必考虑网络的具体传输介质是什么。“透明传送比特流”表示经实际电路传送后的比特流没有发生变化，对传送的比特流来说，这个电路好像是看不见的。</p><p>具体可以参考：<a href="https://blog.csdn.net/yaopeng_2005/article/details/7064869" target="_blank" rel="noopener">OSI七层模型详解</a></p><h3 id="一张大图让你清晰了解OSI-七层模型"><a href="#一张大图让你清晰了解OSI-七层模型" class="headerlink" title="一张大图让你清晰了解OSI 七层模型"></a>一张大图让你清晰了解OSI 七层模型</h3><p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/daliymove/tuchuang/img/000807.jpg" alt=""></p><h2 id="3-TCP-三次握手和四次挥手-面试常客"><a href="#3-TCP-三次握手和四次挥手-面试常客" class="headerlink" title="3. TCP 三次握手和四次挥手(面试常客)"></a>3. TCP 三次握手和四次挥手(面试常客)</h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql学习总结</title>
       <link href="/2020/08/05/mysql-zong-jie/"/>
       <url>/2020/08/05/mysql-zong-jie/</url>
@@ -110,33 +164,6 @@
     
     
     <entry>
-      <title>HashMap之深入浅出</title>
-      <link href="/2020/07/08/hashmap-xiang-jie/"/>
-      <url>/2020/07/08/hashmap-xiang-jie/</url>
-      
-        <content type="html"><![CDATA[<h1 id="HashMap-详解"><a href="#HashMap-详解" class="headerlink" title="HashMap 详解"></a>HashMap 详解</h1><p>大叫好，争取明天能开个头</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-            <tag> 多线程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Finally之未解之谜</title>
       <link href="/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/"/>
       <url>/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/</url>
@@ -156,6 +183,33 @@
             <tag> java </tag>
             
             <tag> finally </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HashMap之深入浅出</title>
+      <link href="/2020/07/08/hashmap-xiang-jie/"/>
+      <url>/2020/07/08/hashmap-xiang-jie/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HashMap-详解"><a href="#HashMap-详解" class="headerlink" title="HashMap 详解"></a>HashMap 详解</h1><p>大叫好，争取明天能开个头</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 多线程 </tag>
             
         </tags>
       
