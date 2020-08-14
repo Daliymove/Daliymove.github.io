@@ -26,21 +26,21 @@ var precacheUrls = [];
 
   precacheUrls.push('/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/');
 
-  precacheUrls.push('/2020/07/08/hashmap-xiang-jie/');
-
   precacheUrls.push('/2020/07/18/java-xu-ni-ji-zhi-chu-chu-mao-lu/');
+
+  precacheUrls.push('/2020/07/11/duo-xian-cheng-zhi-lu/');
 
   precacheUrls.push('/2020/08/08/mysql-suo-yin/');
 
   precacheUrls.push('/2020/08/05/mysql-zong-jie/');
 
-  precacheUrls.push('/2020/07/11/duo-xian-cheng-zhi-lu/');
+  precacheUrls.push('/2020/07/28/suan-fa-de-xue-xi-zhi-lu/');
 
   precacheUrls.push('/2020/06/30/wo-de-di-yi-pian-bo-ke-bi-ji/');
 
-  precacheUrls.push('/2020/07/28/suan-fa-de-xue-xi-zhi-lu/');
-
   precacheUrls.push('/2020/08/07/ji-suan-ji-wang-luo-ji-chu/');
+
+  precacheUrls.push('/2020/07/08/hashmap-xiang-jie/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
