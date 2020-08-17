@@ -24,23 +24,23 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/2020/07/08/finally-guan-jian-zi-zhi-mian-shi-xiang-guan-hui-zong/');
+  precacheUrls.push('/posts/6199.html');
 
-  precacheUrls.push('/2020/07/18/java-xu-ni-ji-zhi-chu-chu-mao-lu/');
+  precacheUrls.push('/posts/55999.html');
 
-  precacheUrls.push('/2020/07/11/duo-xian-cheng-zhi-lu/');
+  precacheUrls.push('/posts/63306.html');
 
-  precacheUrls.push('/2020/08/08/mysql-suo-yin/');
+  precacheUrls.push('/posts/63558.html');
 
-  precacheUrls.push('/2020/08/05/mysql-zong-jie/');
+  precacheUrls.push('/posts/16637.html');
 
-  precacheUrls.push('/2020/07/28/suan-fa-de-xue-xi-zhi-lu/');
+  precacheUrls.push('/posts/48121.html');
 
-  precacheUrls.push('/2020/06/30/wo-de-di-yi-pian-bo-ke-bi-ji/');
+  precacheUrls.push('/posts/3662.html');
 
-  precacheUrls.push('/2020/08/07/ji-suan-ji-wang-luo-ji-chu/');
+  precacheUrls.push('/posts/22223.html');
 
-  precacheUrls.push('/2020/07/08/hashmap-xiang-jie/');
+  precacheUrls.push('/posts/61055.html');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
