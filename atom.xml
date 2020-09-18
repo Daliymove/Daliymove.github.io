@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codejenny.top/"/>
-  <updated>2020-09-10T04:15:12.419Z</updated>
+  <updated>2020-09-18T06:37:08.504Z</updated>
   <id>https://codejenny.top/</id>
   
   <author>
@@ -17,11 +17,182 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SSM 小练习</title>
+    <link href="https://codejenny.top/posts/61188.html"/>
+    <id>https://codejenny.top/posts/61188.html</id>
+    <published>2020-09-16T14:20:23.000Z</published>
+    <updated>2020-09-18T06:37:08.504Z</updated>
+    
+    <summary type="html">
+    
+      学完ssm后巩固的一个小练习
+    
+    </summary>
+    
+    
+      <category term="练习" scheme="https://codejenny.top/categories/%E7%BB%83%E4%B9%A0/"/>
+    
+    
+      <category term="SSM框架" scheme="https://codejenny.top/tags/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="SSM" scheme="https://codejenny.top/tags/SSM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mybatis 入门</title>
+    <link href="https://codejenny.top/posts/3276.html"/>
+    <id>https://codejenny.top/posts/3276.html</id>
+    <published>2020-09-13T03:20:23.000Z</published>
+    <updated>2020-09-18T06:29:11.330Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Mybatis&quot;&gt;&lt;a href=&quot;#Mybatis&quot; class=&quot;headerlink&quot; title=&quot;Mybatis&quot;&gt;&lt;/a&gt;Mybatis&lt;/h1&gt;&lt;h2 id=&quot;一、什么是Mybayis&quot;&gt;&lt;a href=&quot;#一、什么是Mybayis&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="核心框架篇" scheme="https://codejenny.top/categories/%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%E7%AF%87/"/>
+    
+    
+      <category term="Mybatis" scheme="https://codejenny.top/tags/Mybatis/"/>
+    
+      <category term="SSM框架" scheme="https://codejenny.top/tags/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMVC 入门</title>
+    <link href="https://codejenny.top/posts/59145.html"/>
+    <id>https://codejenny.top/posts/59145.html</id>
+    <published>2020-09-11T03:20:23.000Z</published>
+    <updated>2020-09-18T06:29:11.339Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;初学Spring-MVC&quot;&gt;&lt;a href=&quot;#初学Spring-MVC&quot; class=&quot;headerlink&quot; title=&quot;初学Spring MVC&quot;&gt;&lt;/a&gt;初学Spring MVC&lt;/h1&gt;&lt;p&gt;简单介绍一下什么是MVC，M 即
+        
+      
+    
+    </summary>
+    
+    
+      <category term="核心框架篇" scheme="https://codejenny.top/categories/%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%E7%AF%87/"/>
+    
+    
+      <category term="SSM框架" scheme="https://codejenny.top/tags/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="SpringMVC" scheme="https://codejenny.top/tags/SpringMVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring 入门</title>
+    <link href="https://codejenny.top/posts/14131.html"/>
+    <id>https://codejenny.top/posts/14131.html</id>
+    <published>2020-09-09T03:20:23.000Z</published>
+    <updated>2020-09-18T06:34:46.738Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;初学Spring&quot;&gt;&lt;a href=&quot;#初学Spring&quot; class=&quot;headerlink&quot; title=&quot;初学Spring&quot;&gt;&lt;/a&gt;初学Spring&lt;/h1&gt;&lt;p&gt;spring 目的： 实现代码业务逻辑层与其它层的松耦合；&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="核心框架篇" scheme="https://codejenny.top/categories/%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%E7%AF%87/"/>
+    
+    
+      <category term="SSM框架" scheme="https://codejenny.top/tags/SSM%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Spring" scheme="https://codejenny.top/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis入门</title>
+    <link href="https://codejenny.top/posts/52715.html"/>
+    <id>https://codejenny.top/posts/52715.html</id>
+    <published>2020-09-08T03:20:23.000Z</published>
+    <updated>2020-09-18T06:29:11.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis&quot;&gt;&lt;a href=&quot;#Redis&quot; class=&quot;headerlink&quot; title=&quot;Redis&quot;&gt;&lt;/a&gt;Redis&lt;/h1&gt;&lt;p&gt;NoSql的特点： 高并发 高可用 易扩展 高效存储&lt;/p&gt;
+&lt;p&gt;常见的 Nosql
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Nosql" scheme="https://codejenny.top/categories/Nosql/"/>
+    
+    
+      <category term="redis" scheme="https://codejenny.top/tags/redis/"/>
+    
+      <category term="Nosql" scheme="https://codejenny.top/tags/Nosql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://codejenny.top/posts/46563.html"/>
+    <id>https://codejenny.top/posts/46563.html</id>
+    <published>2020-09-05T14:20:23.000Z</published>
+    <updated>2020-09-18T06:29:11.344Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;为啥要反过头来学正则&quot;&gt;&lt;a href=&quot;#为啥要反过头来学正则&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="语法" scheme="https://codejenny.top/categories/%E8%AF%AD%E6%B3%95/"/>
+    
+    
+      <category term="regexp" scheme="https://codejenny.top/tags/regexp/"/>
+    
+      <category term="正则表达式" scheme="https://codejenny.top/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Maven入门级教程</title>
     <link href="https://codejenny.top/posts/567.html"/>
     <id>https://codejenny.top/posts/567.html</id>
     <published>2020-08-20T14:20:23.000Z</published>
-    <updated>2020-09-10T04:15:12.419Z</updated>
+    <updated>2020-09-18T06:29:11.327Z</updated>
     
     <summary type="html">
     
