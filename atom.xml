@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codejenny.top/"/>
-  <updated>2020-09-18T06:37:08.504Z</updated>
+  <updated>2020-11-17T14:42:59.248Z</updated>
   <id>https://codejenny.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot相关总结</title>
+    <link href="https://codejenny.top/posts/37805.html"/>
+    <id>https://codejenny.top/posts/37805.html</id>
+    <published>2020-09-24T14:20:23.000Z</published>
+    <updated>2020-11-17T14:42:59.248Z</updated>
+    
+    <summary type="html">
+    
+      SpringBoot的简单部署
+    
+    </summary>
+    
+    
+      <category term="框架" scheme="https://codejenny.top/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+      <category term="Spring" scheme="https://codejenny.top/tags/Spring/"/>
+    
+      <category term="SpringBoot" scheme="https://codejenny.top/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>SSM 小练习</title>
@@ -102,7 +125,7 @@
     <link href="https://codejenny.top/posts/14131.html"/>
     <id>https://codejenny.top/posts/14131.html</id>
     <published>2020-09-09T03:20:23.000Z</published>
-    <updated>2020-09-18T06:34:46.738Z</updated>
+    <updated>2020-11-17T14:45:27.488Z</updated>
     
     <summary type="html">
     
@@ -328,7 +351,7 @@
     <link href="https://codejenny.top/posts/48121.html"/>
     <id>https://codejenny.top/posts/48121.html</id>
     <published>2020-07-11T03:20:23.000Z</published>
-    <updated>2020-08-17T07:53:34.411Z</updated>
+    <updated>2020-11-13T11:30:02.431Z</updated>
     
     <summary type="html">
     
@@ -374,7 +397,7 @@
     <link href="https://codejenny.top/posts/55999.html"/>
     <id>https://codejenny.top/posts/55999.html</id>
     <published>2020-07-08T03:20:23.000Z</published>
-    <updated>2020-08-17T07:53:34.402Z</updated>
+    <updated>2020-10-25T09:53:20.745Z</updated>
     
     <summary type="html">
     
